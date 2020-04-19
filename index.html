@@ -10,6 +10,7 @@
   <body>
     <button onClick="sendMsg()">Hit Me</button>
 
+    <!-- this is the cdn link for client socket io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script>
       const socket = io("http://localhost:8080");
@@ -17,6 +18,8 @@
       function sendMsg() {
         socket.emit("message", "HELLO WORLD");
       }
+
+      socket.on("message", (data) => console.log(data));
     </script>
   </body>
 </html>

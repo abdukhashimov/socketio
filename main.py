@@ -23,11 +23,11 @@ async def index(request):
 # event we wish to listen out for
 @sio.on('message')
 async def print_message(sid, message):
-    # When we receive a new event of type
-    # 'message' through a socket.io connection
-    # we print the socket ID and the message
     print("Socket ID: ", sid)
     print(message)
+    # await a successful emit of our reversed message
+    # back to the client
+    await sio.emit('message', message[::-1])
 
 
 # We bind our aiohttp endpoint to our app
