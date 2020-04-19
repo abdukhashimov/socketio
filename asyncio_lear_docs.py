@@ -22,7 +22,6 @@ async def main():
     # around 2 seconds.)
     await task1
     await task2
-
     print(f"finished at {time.strftime('%X')}")
 
 asyncio.run(main())
