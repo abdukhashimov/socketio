@@ -17,6 +17,7 @@ def connect(sid, environ):
     print("connect ", sid)
 
 
+
 @sio.on('message')
 async def print_message(sid, message):
     print("Socket ID: ", sid)
